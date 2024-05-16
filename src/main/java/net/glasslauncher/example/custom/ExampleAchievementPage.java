@@ -1,6 +1,6 @@
 package net.glasslauncher.example.custom;
 
-import net.minecraft.block.Block;
+import net.minecraft.world.level.tile.Tile;
 import net.modificationstation.stationapi.api.client.gui.screen.achievement.AchievementPage;
 import net.modificationstation.stationapi.api.util.Namespace;
 
@@ -14,22 +14,22 @@ public class ExampleAchievementPage extends AchievementPage {
 
     @Override
     public int getBackgroundTexture(Random random, int column, int row, int randomizedRow, int currentTexture) {
-        int k = Block.SAND.textureId;
+        int k = Tile.SAND.id;
         int l = random.nextInt(1 + row) + row / 2;
         if (l <= 37 && row != 35) {
             if (l == 22) {
-                k = random.nextInt(2) != 0 ? Block.REDSTONE_ORE.textureId : Block.DIAMOND_ORE.textureId;
+                k = random.nextInt(2) != 0 ? Tile.REDSTONE_ORE.id : Tile.DIAMOND_ORE.id;
             } else if (l == 10) {
-                k = Block.PLANKS.textureId;
+                k = Tile.WOOD.id;
             } else if (l == 8) {
-                k = Block.REDSTONE_ORE.textureId;
+                k = Tile.REDSTONE_ORE.id;
             } else if (l > 4) {
-                k = Block.STONE.textureId;
+                k = Tile.STONE.id;
             } else if (l > 0) {
-                k = Block.DIRT.textureId;
+                k = Tile.DIRT.id;
             }
         } else {
-            k = Block.BEDROCK.textureId;
+            k = Tile.BEDROCK.id;
         }
 
         return k;

@@ -2,8 +2,8 @@ package net.glasslauncher.example.events.init;
 
 import net.glasslauncher.example.custom.ExampleAchievementPage;
 import net.mine_diver.unsafeevents.listener.EventListener;
-import net.minecraft.achievement.Achievement;
-import net.minecraft.item.Item;
+import net.minecraft.stats.Achievement;
+import net.minecraft.world.item.Item;
 import net.modificationstation.stationapi.api.client.gui.screen.achievement.AchievementPage;
 import net.modificationstation.stationapi.api.event.achievement.AchievementRegisterEvent;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
@@ -25,7 +25,7 @@ public class AchievementListener {
         AchievementPage achievementPage = new ExampleAchievementPage(namespace, "examplemod");
         achievement = new Achievement(69696969, "examplemod.boned", -1, 0, Item.BONE, null);
         achievement2 = new Achievement(69696970, "examplemod.apple", 0, 10, Item.APPLE, achievement);
-        achievement2.challenge();
+        achievement2.special();
         list.add(achievement);
         list.add(achievement2);
         achievementPage.addAchievements(achievement, achievement2);

@@ -1,7 +1,7 @@
 package net.glasslauncher.example.events.init;
 
 import net.mine_diver.unsafeevents.listener.EventListener;
-import net.minecraft.item.Item;
+import net.minecraft.world.item.Item;
 import net.modificationstation.stationapi.api.event.registry.ItemRegistryEvent;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
 import net.modificationstation.stationapi.api.template.item.TemplateItem;

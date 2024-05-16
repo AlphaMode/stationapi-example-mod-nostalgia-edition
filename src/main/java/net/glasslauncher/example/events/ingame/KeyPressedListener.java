@@ -12,15 +12,15 @@ public class KeyPressedListener {
 
     @EventListener
     public void keyPressed(KeyStateChangedEvent event) {
-        if (Keyboard.getEventKeyState() && Keyboard.isKeyDown(KeyBindingListener.keyBinding.code)) {
-            ((Minecraft) FabricLoader.getInstance().getGameInstance()).player.increaseStat(AchievementListener.achievement, 1);
+        if (Keyboard.getEventKeyState() && Keyboard.isKeyDown(KeyBindingListener.keyBinding.keyId)) {
+            ((Minecraft) FabricLoader.getInstance().getGameInstance()).player.awardStat(AchievementListener.achievement, 1);
         }
-        if (Keyboard.getEventKeyState() && Keyboard.isKeyDown(KeyBindingListener.keyBinding2.code)) {
-            ((Minecraft)FabricLoader.getInstance().getGameInstance()).player.increaseStat(AchievementListener.achievement2, 1);
+        if (Keyboard.getEventKeyState() && Keyboard.isKeyDown(KeyBindingListener.keyBinding2.keyId)) {
+            ((Minecraft)FabricLoader.getInstance().getGameInstance()).player.awardStat(AchievementListener.achievement2, 1);
         }
-        if (Keyboard.getEventKeyState() && Keyboard.isKeyDown(KeyBindingListener.keyBinding3.code)) {
+        if (Keyboard.getEventKeyState() && Keyboard.isKeyDown(KeyBindingListener.keyBinding3.keyId)) {
             if (((Minecraft) FabricLoader.getInstance().getGameInstance()).player != null)
-                ((Minecraft) FabricLoader.getInstance().getGameInstance()).player.damage(null, 1000000);
+                ((Minecraft) FabricLoader.getInstance().getGameInstance()).player.hurt(null, 1000000);
         }
     }
 }

@@ -1,6 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.6.2'
-	id 'babric-loom-extension' version '1.6.9'
+	id 'babric-loom' version '1.4.2'
 	id 'maven-publish'
 }
 
@@ -15,6 +14,7 @@ loom {
 	mixin {
 		useLegacyMixinAp = true
 	}
+	gluedMinecraftJar()
 	customMinecraftManifest.set("https://babric.github.io/manifest-polyfill/${minecraft_version}.json")
 	intermediaryUrl.set("https://maven.glass-launcher.net/babric/babric/intermediary/%1\$s/intermediary-%1\$s-v2.jar")
 }
@@ -31,11 +31,12 @@ repositories {
 		name = 'Babric'
 		url = 'https://maven.glass-launcher.net/babric'
 	}
-	// Used for mappings.
 	maven {
 		name = 'Glass Releases'
 		url = 'https://maven.glass-launcher.net/releases'
 	}
+	// Used for mappings.
+	maven { url 'https://maven.wispforest.io' }
 	// Used for StationAPI and HowManyItems.
 	maven {
 		name = 'Glass Snapshots'
@@ -69,7 +70,7 @@ repositories {
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.glasslauncher:biny:${project.yarn_mappings}:v2"
+	mappings "me.alphamode:nostalgia:${project.nostalgia_mappings}:v2"
 	modImplementation "babric:fabric-loader:${project.loader_version}"
 
 	implementation "org.slf4j:slf4j-api:1.8.0-beta4"
