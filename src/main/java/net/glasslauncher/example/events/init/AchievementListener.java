@@ -25,7 +25,7 @@ public class AchievementListener {
         AchievementPage achievementPage = new ExampleAchievementPage(namespace, "examplemod");
         achievement = new Achievement(69696969, "examplemod.boned", -1, 0, Item.BONE, null);
         achievement2 = new Achievement(69696970, "examplemod.apple", 0, 10, Item.APPLE, achievement);
-        achievement2.special();
+        achievement2.challenge();
         list.add(achievement);
         list.add(achievement2);
         achievementPage.addAchievements(achievement, achievement2);
